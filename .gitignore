@@ -1,0 +1,24 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Model weights are trained separately and deployed alongside the app
+*.pt
+*.onnx
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+antenv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

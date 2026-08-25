@@ -1,0 +1,11 @@
+# This repo deploys to Linux (Azure App Service). Without this file, Git for
+# Windows' core.autocrlf=true rewrites line endings on checkout and produces
+# phantom whole-file diffs. Normalise to LF in the repository.
+* text=auto eol=lf
+
+# Binary — never touch
+*.pt   binary
+*.onnx binary
+*.jpg  binary
+*.jpeg binary
+*.png  binary

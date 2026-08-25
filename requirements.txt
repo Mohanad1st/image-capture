@@ -1,4 +1,13 @@
+# NOTE ON OPENCV ORDER — this is deliberate, do not "tidy" it.
+# ultralytics hard-requires opencv-python (>=4.7.0), the GUI build.
+# Azure App Service Linux has no libGL.so.1, so the GUI build raises
+#   ImportError: libGL.so.1: cannot open shared object file
+# at `import cv2`. Both packages provide the same `cv2` module, so the
+# headless build is listed last and must be the one that wins.
+# If you rebuild the environment from scratch, verify with:
+#   python -c "import cv2; print(cv2.__file__)"
+ultralytics==8.4.128
 fastapi==0.135.1
-opencv-python-headless==4.13.0.92
 uvicorn>=0.27.0
 gunicorn>=21.2.0
+opencv-python-headless==4.13.0.92
